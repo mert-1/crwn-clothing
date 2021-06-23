@@ -6,18 +6,21 @@ import "./menu-item.styles.scss";
 const MenuItem = ({ title, imageUrl, size, history, match, linkUrl }) => {
   return (
     <div
-      className={`${size} menu-item`}
+      className={`${size}  d-flex justify-content-center align-items-center border border-dark m-2 menu-item`}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <div
-        className="background-image"
+        className="w-100 h-100 background-image"
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
       />
-      <div className="content">
-        <h1 className="title">{title.toUpperCase()}</h1>
-        <span className="subtitle">SHOP NOW</span>
+      <div
+        className="position-absolute d-flex flex-column align-items-center border border-dark bg-white p-2"
+        style={{ opacity: 0.7 }}
+      >
+        <h1 className="fw-bold fs-4">{title.toUpperCase()}</h1>
+        <span className="fw-lighter">SHOP NOW</span>
       </div>
     </div>
   );

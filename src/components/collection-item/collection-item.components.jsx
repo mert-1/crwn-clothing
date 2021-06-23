@@ -3,11 +3,14 @@ import React from "react";
 import "./collection-item.styles.scss";
 
 const CollectionItem = ({ id, name, price, imageUrl }) => (
-  <div className="collection-item">
-    <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
-    <div className="collection-footer">
-      <span className="name">{name}</span>
-      <span className="price">{price}</span>
+  <div className="w-100 m-3 d-flex flex-column collection-item">
+    <div
+      className="h-100 image"
+      style={{ backgroundImage: `url(${imageUrl})` }}
+    />
+    <div className="d-flex justify-content-between mt-2 fs-5">
+      <span>{name}</span>
+      <span>{price}</span>
     </div>
   </div>
 );

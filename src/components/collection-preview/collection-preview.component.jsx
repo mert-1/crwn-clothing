@@ -1,11 +1,10 @@
 import React from "react";
 import CollectionItem from "../collection-item/collection-item.components";
-import "./collection-preview.styles.scss";
 
 const CollectionPreview = ({ title, items }) => (
-  <div className="collection-preview">
-    <h1 className="title">{title.toUpperCase()}</h1>
-    <div className="preview">
+  <div className="d-flex flex-column pb-4">
+    <h1 className="fs-1">{title.toUpperCase()}</h1>
+    <div className="d-flex justify-content-between">
       {items
         .filter((item, idx) => idx < 4)
         .map(({ id, ...itemProps }) => (
