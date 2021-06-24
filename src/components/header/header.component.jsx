@@ -12,9 +12,6 @@ const Header = ({ currentUser }) => (
       <Link className="p-3 fs-4" to="/shop">
         SHOP
       </Link>
-      <Link className="p-3 fs-4" to="/contact">
-        CONTACT
-      </Link>
       {currentUser ? (
         <Link className="p-3 fs-4" to="/" onClick={() => auth.signOut()}>
           SIGN OUT

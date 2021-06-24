@@ -1,5 +1,6 @@
 import React from "react";
 
+import Form from "../form/form.component";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
@@ -28,9 +29,10 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="w-50 p-4 mt-3" style={{ border: "1px solid" }}>
-        <h2>I already have an account</h2>
-        <span>Sign in wiht your email and password</span>
+      <Form
+        title="I already have an account"
+        label="Sign in wiht your email and password"
+      >
         <form onSubmit={this.handleSubmit}>
           <FormInput
             name="email"
@@ -40,22 +42,22 @@ class SignIn extends React.Component {
             label="email"
             required
           ></FormInput>
-          <FormInput
-            name="password"
-            type="password"
-            value={this.state.password}
-            handleChange={this.handleChange}
-            label="password"
-            required
-          ></FormInput>
-          <div className="d-flex justify-content-center">
-            <CustomButton type="submit">Sign In</CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-              Sign in with Google
-            </CustomButton>
-          </div>
         </form>
-      </div>
+        <FormInput
+          name="password"
+          type="password"
+          value={this.state.password}
+          handleChange={this.handleChange}
+          label="password"
+          required
+        ></FormInput>
+        <div className="d-flex justify-content-center">
+          <CustomButton type="submit">Sign In</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            Sign in with Google
+          </CustomButton>
+        </div>
+      </Form>
     );
   }
 }
