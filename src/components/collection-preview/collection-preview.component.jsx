@@ -7,8 +7,8 @@ const CollectionPreview = ({ title, items }) => (
     <div className="d-flex justify-content-between">
       {items
         .filter((item, idx) => idx < 4)
-        .map(({ id, ...itemProps }) => (
-          <CollectionItem key={id} {...itemProps} />
+        .map((item) => (
+          <CollectionItem key={item.id} item={item} />
         ))}
     </div>
   </div>
