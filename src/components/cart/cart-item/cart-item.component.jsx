@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const CartItem = ({ item: { imageUrl, price, name, quantity } }) => (
   <div className="d-flex mb-3">
     <img src={imageUrl} alt="item" style={{ width: "30%" }} />

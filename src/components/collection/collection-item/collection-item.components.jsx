@@ -1,8 +1,8 @@
 import React from "react";
-import CustomButton from "../custom-button/custom-button.component";
+import CustomButton from "../../custom-button/custom-button.component";
 import "./collection-item.styles.scss";
 import { connect } from "react-redux";
-import { addItem } from "../../redux/cart/cart.action";
+import { addItem } from "../../../redux/cart/cart.actions";
 
 const CollectionItem = ({ item, addItem }) => (
   <div className="w-100 m-3 d-flex flex-column collection-item">

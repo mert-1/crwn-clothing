@@ -9,11 +9,17 @@
   background-color: white;
   z-index: 5;
 
-  .cart-items {
-    max-height: 20rem;
+  .cart-elements {
     display: flex;
     flex-direction: column;
-    overflow: auto;
-    margin-bottom: 1rem;
+    align-items: center;
+
+    .cart-items {
+      max-height: 20rem;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      // margin-bottom: 1rem;
+    }
   }
 }
