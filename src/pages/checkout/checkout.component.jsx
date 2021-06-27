@@ -16,11 +16,10 @@ import { withRouter } from "react-router-dom";
 import StripeCheckoutButton from "../../components/stripe-button/stripe-button";
 
 const CheckoutPage = ({ cartItems, total, history }) => {
-  console.log("cartItems", cartItems);
   return (
     <div className="checkout-page">
       {cartItems.length > 0 ? (
-        <div>
+        <div className="w-50">
           <div className="checkout-header">
             <div className="header-block">
               <span>Product</span>
