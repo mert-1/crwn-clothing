@@ -6,3 +6,4 @@ react-redux
 reselect
 redux-persists
 lodash.memoize
+react-stripe-checkout

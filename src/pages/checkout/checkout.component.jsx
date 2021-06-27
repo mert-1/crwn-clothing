@@ -13,6 +13,7 @@ import CheckoutItem from "../../components/checkout-item/checkout-item.component
 import CustomButton from "../../components/custom-button/custom-button.component";
 
 import { withRouter } from "react-router-dom";
+import StripeCheckoutButton from "../../components/stripe-button/stripe-button";
 
 const CheckoutPage = ({ cartItems, total, history }) => {
   console.log("cartItems", cartItems);
@@ -40,7 +41,15 @@ const CheckoutPage = ({ cartItems, total, history }) => {
           {cartItems.map((cartItem) => (
             <CheckoutItem key={cartItem.id} cartItem={cartItem} />
           ))}
-          <div className="total">Total: ${total}</div>
+          <div className="total">TOTAL: ${total}</div>
+          <div className="test-warning">
+            *Please use the following test credit card for payments*
+            <br />
+            4242 4242 4242 4242 4242 - exp any future date - any CVC
+          </div>
+          <div className="d-flex justify-content-center mt-4">
+            <StripeCheckoutButton price={total} />
+          </div>
         </div>
       ) : (
         <div className="d-flex flex-column justify-content-center align-items-center ">
