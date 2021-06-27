@@ -1,0 +1,8 @@
+firebase
+react-router-dom
+redux 
+redux-logger 
+react-redux
+reselect
+redux-persists
+lodash.memoize
