@@ -1,10 +1,11 @@
 import React from "react";
+import { HomePageContainer } from "./homepage.styles";
 import Directory from "../../components/directory/directory.component";
 
 const HomePage = () => (
-  <div className="d-flex flex-column align-items-center p-3">
+  <HomePageContainer>
     <Directory />
-  </div>
+  </HomePageContainer>
 );
 
 export default HomePage;

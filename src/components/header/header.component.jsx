@@ -1,6 +1,5 @@
 // React
 import React from "react";
-import { Link } from "react-router-dom";
 
 // Assets
 import { ReactComponent as Logo } from "../../assets/crown.svg";
@@ -20,29 +19,32 @@ import { connect } from "react-redux";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink,
+} from "./header.styles";
+
 const Header = ({ currentUser, hidden }) => {
   return (
     <div>
-      <div className="d-flex justify-content-between mt-2">
-        <Link className="p-4" to="/">
+      <HeaderContainer>
+        <LogoContainer to="/">
           <Logo />
-        </Link>
-        <div className="d-flex align-items-center">
-          <Link className="p-3 fs-4" to="/shop">
-            SHOP
-          </Link>
+        </LogoContainer>
+        <OptionsContainer>
+          <OptionLink to="/shop">SHOP</OptionLink>
           {currentUser ? (
-            <Link className="p-3 fs-4" to="/" onClick={() => auth.signOut()}>
+            <OptionLink to="/" onClick={() => auth.signOut()}>
               SIGN OUT
-            </Link>
+            </OptionLink>
           ) : (
-            <Link className="p-3 fs-4" to="/signin">
-              SIGN IN
-            </Link>
+            <OptionLink to="/signin">SIGN IN</OptionLink>
           )}
           <CartIcon />
-        </div>
-      </div>
+        </OptionsContainer>
+      </HeaderContainer>
       {hidden ? null : (
         <div className="d-flex justify-content-end">
           <CartDropdown />

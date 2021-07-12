@@ -1,14 +1,16 @@
+npx create-react-app ${NAME} --template cra-template-pwa
+
 firebase
+sass
 react-router-dom
 redux 
 redux-logger 
 react-redux
 reselect
-redux-persists
+redux-persist
 lodash.memoize
 react-stripe-checkout
-
-
+styled-components
 
 heroku login
 heroku create ${NAME} --buildpack https://github.com/mars/create-react-app-buildpack.git

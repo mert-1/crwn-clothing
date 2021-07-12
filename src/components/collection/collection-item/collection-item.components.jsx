@@ -1,25 +1,33 @@
 import React from "react";
-import CustomButton from "../../custom-button/custom-button.component";
-import "./collection-item.styles.scss";
 import { connect } from "react-redux";
+
 import { addItem } from "../../../redux/cart/cart.actions";
 
-const CollectionItem = ({ item, addItem }) => (
-  <div className="w-100 m-3 d-flex flex-column collection-item">
-    <div
-      className="h-100 image"
-      style={{ backgroundImage: `url(${item.imageUrl})` }}
-    >
-      <CustomButton onClick={() => addItem(item)} inverted>
-        ADD TO CART
-      </CustomButton>
-    </div>
-    <div className="d-flex justify-content-between mt-2 fs-5">
-      <span>{item.name}</span>
-      <span>{item.price}</span>
-    </div>
-  </div>
-);
+import {
+  CollectionItemContainer,
+  CollectionFooterContainer,
+  AddButton,
+  BackgroundImage,
+  NameContainer,
+  PriceContainer,
+} from "./collection-item.styles";
+
+const CollectionItem = ({ item, addItem }) => {
+  const { name, price, imageUrl } = item;
+
+  return (
+    <CollectionItemContainer>
+      <BackgroundImage className="image" imageUrl={imageUrl} />
+      <CollectionFooterContainer>
+        <NameContainer>{name}</NameContainer>
+        <PriceContainer>{price}</PriceContainer>
+      </CollectionFooterContainer>
+      <AddButton onClick={() => addItem(item)} inverted>
+        Add to cart
+      </AddButton>
+    </CollectionItemContainer>
+  );
+};
 
 const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),
