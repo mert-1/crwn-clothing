@@ -11,6 +11,8 @@ redux-persist
 lodash.memoize
 react-stripe-checkout
 styled-components
+redux-thunk
+redux-saga
 
 heroku login
 heroku create ${NAME} --buildpack https://github.com/mars/create-react-app-buildpack.git
